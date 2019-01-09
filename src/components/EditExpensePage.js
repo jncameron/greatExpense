@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
 class EditExpensePage extends Component {
+
+
   render() {
-    return(
+    console.log(this.props);
+    return (
       <div>Edit Expense here...</div>
     )
   }
