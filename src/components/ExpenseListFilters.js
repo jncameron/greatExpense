@@ -9,7 +9,12 @@ class ExpenseListFilters extends Component {
     calendarFocused: null
   };
   onDatesChange = ({ startDate, endDate}) => {
+    this.props.dispatch(setStartDate(startDate));
+    this.props.dispatch(setEndDate(endDate));
+  };
 
+  onFocusChange = (calendarFocused) => {
+    this.setState(() => ({ calendarFocused}));
   }
 
   render() {
@@ -30,7 +35,11 @@ class ExpenseListFilters extends Component {
         startDate={this.props.filters.startDate}
         endDate={this.props.filters.endDate}
         onDatesChange={this.onDatesChange}
-
+        focusedInput={this.state.calendarFocused}
+        onFocusChange={this.onFocusChange}
+        showClearDates={true}
+        numberOfMonths={1}
+        isOutsideRange={() => false}
       />
     </div>
     )
