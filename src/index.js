@@ -3,22 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routes/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense, startSetExpenses } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses';
+import { startSetExpenses } from './actions/expenses';
+import { firebase } from './firebase/firebase';
 import './firebase/firebase';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water bill', note:'for water', amount:1500, createdAt: 9000}));
-store.dispatch(addExpense({ description: 'Phone bill', note:'for phone', amount:7000, createdAt: 1000}));
-store.dispatch(addExpense({ description: 'Rent', note:'for water', amount:109500}));
-
-
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
-console.log(visibleExpenses);
-console.log(store.getState());
 
 const jsx = (
   <Provider store={store}>
@@ -30,6 +20,14 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById('root'));
 });
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('log in');
+  } else {
+    console.log('log out');
+  }
+})
 
 
 
