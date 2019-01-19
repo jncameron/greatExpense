@@ -7,11 +7,11 @@ import { startAddExpense, addExpense } from '../actions/expenses';
 class AddExpensePage extends Component {
 
   onSubmit = (expense) => {
-    this.props.dispatch(startAddExpense(expense));
+    this.props.startAddExpense(expense);
     this.props.history.push('/');
-  }
+  };
 
-  render(props) {
+  render() {
     return(
       <div>
         <div className="page-header">
@@ -28,7 +28,7 @@ class AddExpensePage extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  startAddExpense: (expense) => dispatch(addExpense(expense))
+  startAddExpense: (expense) => dispatch(startAddExpense(expense))
 })
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
