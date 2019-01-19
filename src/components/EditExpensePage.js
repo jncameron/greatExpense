@@ -29,7 +29,7 @@ export class EditExpensePage extends Component {
           expense={this.props.expense}
           onSubmit={this.onSubmit} 
         />
-        <button className="button button__remove" onClick={this.onRemove}>Remove</button>     
+        <button className="button button__remove" onClick={this.onRemove}>Remove Expense</button>     
         </div>
       </div>
       
