@@ -5,16 +5,23 @@ import { startAddExpense, addExpense } from '../actions/expenses';
 
 
 class AddExpensePage extends Component {
+
+  onSubmit = (expense) => {
+    this.props.dispatch(startAddExpense(expense));
+    this.props.history.push('/');
+  }
+
   render(props) {
     return(
       <div>
-        <h1>Add Expense</h1>
-        <ExpenseForm 
-          onSubmit={(expense) => {
-            this.props.dispatch(startAddExpense(expense));
-            this.props.history.push('/');
-          }}
-        />
+        <div className="page-header">
+          <div className="content-container">
+            <h1 className="page-header__title">Add Expense</h1>
+          </div>
+        </div>
+        <div className="content-container">
+          <ExpenseForm onSubmit={this.onSubmit} />
+        </div>
       </div>
     )
   }
@@ -24,4 +31,4 @@ const mapDispatchToProps = (dispatch) => ({
   startAddExpense: (expense) => dispatch(addExpense(expense))
 })
 
-export default connect(mapDispatchToProps)(AddExpensePage);
+export default connect(undefined, mapDispatchToProps)(AddExpensePage);
