@@ -9,6 +9,7 @@
 
 .list-body {
   margin-bottom: $m-size;
+  background-color: #fff;
   @media (min-width: $desktop-breakpoint) {
     margin-bottom: $l-size;
   }
