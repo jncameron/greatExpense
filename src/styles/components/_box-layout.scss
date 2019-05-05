@@ -1,5 +1,5 @@
 .box-layout {
-  background: url('/images/bg.jpg');
+  background: url("/images/bg.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .box-layout__box {
-  background: fade-out($color: #FFF, $amount: .15);
+  background-color: fade-out($color: #fff, $amount: 0.15);
   border-radius: 3px;
   text-align: center;
   padding: $l-size $m-size;

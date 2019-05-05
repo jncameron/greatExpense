@@ -5,10 +5,14 @@ import {
   githubAuthProvider
 } from "../firebase/firebase";
 
-export const login = uid => {
+let token;
+let user = "test";
+
+export const login = user => {
   return {
     type: "LOGIN",
-    uid
+    uid: user.uid,
+    user: user.displayName
   };
 };
 
@@ -26,19 +30,7 @@ export const startLoginFacebook = () => {
 
 export const startLoginGithub = () => {
   return () => {
-    return firebase
-      .auth()
-      .signInWithPopup(githubAuthProvider)
-      .then(function(result) {
-        let token = result.credential.accessToken;
-        let user = result.user;
-      })
-      .catch(function(error) {
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        let email = error.email;
-        let credential = error.credential;
-      });
+    return firebase.auth().signInWithPopup(githubAuthProvider);
   };
 };
 

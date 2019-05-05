@@ -1,8 +1,9 @@
 .App {
-  background: rgb(0,10,28);
-  background: linear-gradient(25deg, rgba(0,10,28,1) 0%, rgba(41,50,66,1) 57%, rgba(82,91,109,1) 100%);
+  background: url("/images/bg.jpg");
   background-size: cover;
   height: 100vh;
+  opacity: 0.8;
+  z-index: -2;
 }
 
 .particles {
