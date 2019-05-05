@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { startLoginGoogle, startLoginFacebook } from "../actions/auth";
+import {
+  startLoginGoogle,
+  startLoginFacebook,
+  startLoginGithub
+} from "../actions/auth";
 
 const LoginPage = ({ startLoginGoogle, startLoginFacebook }) => (
   <div className="box-layout">
@@ -14,13 +18,18 @@ const LoginPage = ({ startLoginGoogle, startLoginFacebook }) => (
       <button className="button" onClick={startLoginFacebook}>
         Login with Facebook
       </button>
+      <hr />
+      <button className="button" onClick={startLoginGithub}>
+        Login with Github
+      </button>
     </div>
   </div>
 );
 
 const mapDispatchToProps = dispatch => ({
   startLoginGoogle: () => dispatch(startLoginGoogle()),
-  startLoginFacebook: () => dispatch(startLoginFacebook())
+  startLoginFacebook: () => dispatch(startLoginFacebook()),
+  startLoginGithub: () => dispatch(startLoginGithub())
 });
 
 export default connect(

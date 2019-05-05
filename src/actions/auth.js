@@ -1,7 +1,8 @@
 import {
   firebase,
   googleAuthProvider,
-  facebookAuthProvider
+  facebookAuthProvider,
+  githubAuthProvider
 } from "../firebase/firebase";
 
 export const login = uid => {
@@ -20,6 +21,12 @@ export const startLoginGoogle = () => {
 export const startLoginFacebook = () => {
   return () => {
     return firebase.auth().signInWithPopup(facebookAuthProvider);
+  };
+};
+
+export const startLoginGithub = () => {
+  return () => {
+    return firebase.auth().signInWithPopup(githubAuthProvider);
   };
 };
 
