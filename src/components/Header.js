@@ -12,7 +12,10 @@ const Header = ({ startLogout, userName }) => {
             <h1>Great Expense</h1>
           </Link>
           <h3 className="header__title">{userName}</h3>
-          <button className="button button__link" onClick={startLogout}>
+          <button
+            className="huge ui inverted basic blue button"
+            onClick={startLogout}
+          >
             Logout
           </button>
         </div>
