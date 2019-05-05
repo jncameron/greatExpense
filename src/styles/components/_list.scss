@@ -23,7 +23,7 @@
   flex-direction: column;
   padding: $s-size;
   text-decoration: none;
-  transition: background .3s ease;
+  transition: background 0.3s ease;
   &:hover {
     background: #f7f7f7;
   }
@@ -46,6 +46,12 @@
 
 .list-item__title {
   margin: 0;
+  word-break: break-all;
+}
+
+.list-item__type {
+  margin: 0;
+  font-style: italic;
   word-break: break-all;
 }
 

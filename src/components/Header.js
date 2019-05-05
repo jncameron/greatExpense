@@ -13,7 +13,7 @@ const Header = ({ startLogout, userName }) => {
           </Link>
           <h3 className="header__title">{userName}</h3>
           <button
-            className="huge ui inverted basic blue button"
+            className="huge ui inverted basic red button"
             onClick={startLogout}
           >
             Logout
