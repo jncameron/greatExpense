@@ -1,7 +1,7 @@
 .button {
   background: $blue;
   border: none;
-  color: #FFF;
+  color: #fff;
   display: inline-block;
   font-size: $font-size-large;
   font-weight: 300;
@@ -16,4 +16,8 @@
 
 .button__remove {
   background: darkred;
+}
+
+.loginbutton {
+  min-width: 80% !important;
 }

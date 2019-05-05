@@ -26,7 +26,19 @@ export const startLoginFacebook = () => {
 
 export const startLoginGithub = () => {
   return () => {
-    return firebase.auth().signInWithPopup(githubAuthProvider);
+    return firebase
+      .auth()
+      .signInWithPopup(githubAuthProvider)
+      .then(function(result) {
+        let token = result.credential.accessToken;
+        let user = result.user;
+      })
+      .catch(function(error) {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        let email = error.email;
+        let credential = error.credential;
+      });
   };
 };
 
