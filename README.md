@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 2022 - Updating Project
+ToDo:
+1. update dependencies and scripts. remove vulnerabilities
+2. remove firebase backend including auth
+3. create ASP.NET Core Webapi backend with Sqlite persistence
+4. Oauth / social sign-on
+
+
 ## Live Demo
 //tbd
 
