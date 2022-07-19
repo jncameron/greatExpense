@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { DateRangePicker } from "react-dates";
+import { DatePicker } from "react-datepicker";
 import {
   setTextFilter,
   sortByAmount,
@@ -52,7 +52,7 @@ class ExpenseListFilters extends Component {
             </select>
           </div>
           <div className="input-group__item">
-            <DateRangePicker
+            <DatePicker
               displayFormat="DD/MM/YYYY"
               startDate={this.props.filters.startDate}
               endDate={this.props.filters.endDate}

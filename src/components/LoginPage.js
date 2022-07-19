@@ -1,10 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  startLoginGoogle,
-  startLoginFacebook,
-  startLoginGithub
-} from "../actions/auth";
 
 const LoginPage = ({
   startLoginGoogle,
@@ -40,9 +35,9 @@ const LoginPage = ({
 );
 
 const mapDispatchToProps = dispatch => ({
-  startLoginGoogle: () => dispatch(startLoginGoogle()),
-  startLoginFacebook: () => dispatch(startLoginFacebook()),
-  startLoginGithub: () => dispatch(startLoginGithub())
+  // startLoginGoogle: () => dispatch(startLoginGoogle()),
+  // startLoginFacebook: () => dispatch(startLoginFacebook()),
+  // startLoginGithub: () => dispatch(startLoginGithub())
 });
 
 export default connect(

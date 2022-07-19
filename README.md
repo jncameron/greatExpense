@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live Demo
-https://great-expense.firebaseapp.com/dashboard
+//tbd
 
 ## Available Scripts
 

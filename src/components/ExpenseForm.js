@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { SingleDatePicker } from "react-dates";
+import { DatePicker } from "react-datepicker";
 import { Dropdown } from "semantic-ui-react";
-import "react-dates/lib/css/_datepicker.css";
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -98,7 +97,7 @@ export default class ExpenseForm extends React.Component {
           value={this.state.amount}
           onChange={this.onAmountChange}
         />
-        <SingleDatePicker
+        <DatePicker
           displayFormat="DD/MM/YYYY"
           date={this.state.createdAt}
           onDateChange={this.onDateChange}

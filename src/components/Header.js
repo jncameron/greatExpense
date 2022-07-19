@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { startLogout } from "../actions/auth";
 
-const Header = ({ startLogout, userName }) => {
+const Header = ({ userName }) => {
   return (
     <header className="header">
       <div className="content-container">
@@ -14,7 +13,7 @@ const Header = ({ startLogout, userName }) => {
           <h3 className="header__title">{userName}</h3>
           <button
             className="huge ui inverted basic red button"
-            onClick={startLogout}
+            //onClick={}
           >
             Logout
           </button>
@@ -30,7 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    startLogout: () => dispatch(startLogout())
+  //  startLogout: () => dispatch(startLogout())
   };
 };
 
