@@ -2,16 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import AppRouter, { history } from "./routes/AppRouter";
-import App from "./App";
+
 import { addExpense } from './actions/expenses';
 import configureStore from "./store/configureStore";
 import getVisibleExpenses from './selectors/expenses';
-import ExpenseDashboardPage from './components/ExpenseDashboardPage';
-import AddExpensePage from "./components/AddExpensePage";
-import EditExpensePage from "./components/EditExpensePage";
-import NotFoundPage from "./components/NotFoundPage";
+
+
 import Header from "./components/Header";
-import AboutPage from "./components/AboutPage";
+
 import { startSetExpenses } from "./actions/expenses";
 import LoadingPage from "./components/LoadingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -34,12 +32,7 @@ root.render(
     <BrowserRouter>
     <Header />
     <Routes>
-        <Route path="/" element={<App />} exact={true}/>
-        <Route path="/dashboard" element={<ExpenseDashboardPage/>} />
-        <Route path="/create" element={<AddExpensePage/>} />
-        <Route path="/edit/:id" element={<EditExpensePage/>} />
-        <Route path="/about" element={<AboutPage/>} />
-        <Route path="*" element={<NotFoundPage/>} />
+
       </Routes>
     </BrowserRouter>
   </Provider>
