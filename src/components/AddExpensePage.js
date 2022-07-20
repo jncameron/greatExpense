@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import { addExpense } from '../actions/expenses';
+import axios from 'axios';
 
 
 class AddExpensePage extends Component {
 
+  //const [expenses, setExpenses] = useState([]);
+
   onSubmit = (expense) => {
     this.props.startAddExpense(expense);
-    this.props.history.push('/');
+    //this.props.history.push('/');
+    axios.post('https://localhost:7013/api/expenserecords', {expense}).then(response => { 
+      console.log(response.data)})
   };
 
   render() {

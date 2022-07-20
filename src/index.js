@@ -9,9 +9,7 @@ import getVisibleExpenses from './selectors/expenses';
 
 
 import Header from "./components/Header";
-
 import { startSetExpenses } from "./actions/expenses";
-import LoadingPage from "./components/LoadingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const store = configureStore();
@@ -30,10 +28,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-    <Header />
-    <Routes>
-
-      </Routes>
+      <Header />
+      <AppRouter />
     </BrowserRouter>
   </Provider>
 

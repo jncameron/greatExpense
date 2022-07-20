@@ -8,12 +8,12 @@ export default class ExpenseForm extends React.Component {
     super(props);
 
     this.state = {
+      id: '6',
       description: props.expense ? props.expense.description : "",
-      note: props.expense ? props.expense.note : "",
       amount: props.expense ? (props.expense.amount / 100).toString() : "",
-      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
-      expenseType: props.expense ? props.expense.expenseType : "",
-      calendarFocused: false,
+      // createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      expense: '2',
+
       error: ""
     };
   }
@@ -54,11 +54,12 @@ export default class ExpenseForm extends React.Component {
     } else {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
-        description: this.state.description,
+        id: this.state.id,
+        comment: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
-        createdAt: this.state.createdAt.valueOf(),
-        note: this.state.note,
-        expenseType: this.state.expenseType
+        // createdAt: this.state.createdAt.valueOf(),
+        // note: this.state.note,
+        expense: this.state.expense
       });
     }
   };
