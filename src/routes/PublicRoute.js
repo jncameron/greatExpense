@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, Navigate } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 
 
 const PublicRoute = ({ 

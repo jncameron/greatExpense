@@ -1,8 +1,23 @@
 
 // ADD_EXPENSE
-export const addExpense = expense => ({
-  type: "ADD_EXPENSE",
-  expense
+// ADD_EXPENSE
+export const addExpense = (
+  {
+    id = 4,
+    description = '',
+    note = '',
+    amount = 0,
+    createdAt = 0
+  } = {}
+) => ({
+  type: 'ADD_EXPENSE',
+  expense: {
+    id,
+    description,
+    note,
+    amount,
+    createdAt
+  }
 });
 
 const database = {  };
@@ -10,16 +25,17 @@ const database = {  };
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch, getState) => {
     const {
+      id = 4,
       description = "",
       note = "",
       expenseType = "",
       amount = 0,
       createdAt = 0
     } = expenseData;
-    const expense = { description, note, expenseType, amount, createdAt };
+    const expense = { id, description, note, expenseType, amount, createdAt };
 
     return database
-      .ref(`users/1/expenses`)
+      // .ref(`users/1/expenses`)
       .push(expense)
       .then(ref => {
         dispatch(
