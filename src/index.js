@@ -32,13 +32,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+    <Header />
     <Routes>
-        <Route path="/" component={App} exact={true}/>
-        <Route path="/dashboard" component={ExpenseDashboardPage} />
-        <Route path="/create" component={AddExpensePage} />
-        <Route path="/edit/:id" component={EditExpensePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route component={NotFoundPage} />
+        <Route path="/" element={<App />} exact={true}/>
+        <Route path="/dashboard" element={<ExpenseDashboardPage/>} />
+        <Route path="/create" element={<AddExpensePage/>} />
+        <Route path="/edit/:id" element={<EditExpensePage/>} />
+        <Route path="/about" element={<AboutPage/>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </BrowserRouter>
   </Provider>

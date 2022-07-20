@@ -1,4 +1,3 @@
-import uuid from "uuid";
 
 // ADD_EXPENSE
 export const addExpense = expense => ({
@@ -10,7 +9,6 @@ const database = {  };
 
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch, getState) => {
-    const uid = getState().auth.uid;
     const {
       description = "",
       note = "",
@@ -21,7 +19,7 @@ export const startAddExpense = (expenseData = {}) => {
     const expense = { description, note, expenseType, amount, createdAt };
 
     return database
-      .ref(`users/${uid}/expenses`)
+      .ref(`users/1/expenses`)
       .push(expense)
       .then(ref => {
         dispatch(

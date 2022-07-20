@@ -97,7 +97,7 @@ export default class ExpenseForm extends React.Component {
           value={this.state.amount}
           onChange={this.onAmountChange}
         />
-        <DatePicker
+        {/* <DatePicker
           displayFormat="DD/MM/YYYY"
           date={this.state.createdAt}
           onDateChange={this.onDateChange}
@@ -105,7 +105,7 @@ export default class ExpenseForm extends React.Component {
           onFocusChange={this.onFocusChange}
           numberOfMonths={1}
           isOutsideRange={() => false}
-        />
+        /> */}
         <textarea
           className="textarea"
           placeholder="Add a note for your expense (optional)"
