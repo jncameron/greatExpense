@@ -1,18 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import Position from "./components/Position";
+import Header from "./components/Header";
+
 import ExpensesSummary from "./components/ExpensesSummary";
 
 import "./styles/styles.scss";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <ExpensesSummary />
-        <Position />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Header/>
+      <ExpensesSummary />
+      <Position />
+    </div>
+  );
 }
 
 export default App;

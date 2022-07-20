@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Header = ({ userName }) => {
@@ -7,33 +7,22 @@ const Header = ({ userName }) => {
     <header className="header">
       <div className="content-container">
         <div className="header__content">
-          <Link className="header__title" to="/dashboard">
+          <NavLink to="/dashboard" className="header__title" >
             <h1>Great Expense</h1>
-          </Link>
-          <h3 className="header__title">{userName}</h3>
-          <button
-            className="huge ui inverted basic red button"
-            //onClick={}
-          >
-            Logout
-          </button>
+          </NavLink>
+          <NavLink to="/create" className="header__title" >
+            <h1>Create Expense</h1>
+          </NavLink>
+          <NavLink to="/dashboard" className="header__title" >
+            <h1>Edit Expense</h1>
+          </NavLink>
+          <NavLink to="/about" className="header__title" >
+            <h1>About</h1>
+          </NavLink>
         </div>
       </div>
     </header>
   );
 };
 
-const mapStateToProps = state => {
-  return { userName: state.auth.user };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-  //  startLogout: () => dispatch(startLogout())
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header);
+export default Header;

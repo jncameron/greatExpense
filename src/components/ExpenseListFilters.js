@@ -52,7 +52,7 @@ class ExpenseListFilters extends Component {
             </select>
           </div>
           <div className="input-group__item">
-            <DatePicker
+            {/* <DatePicker
               displayFormat="DD/MM/YYYY"
               startDate={this.props.filters.startDate}
               endDate={this.props.filters.endDate}
@@ -62,7 +62,8 @@ class ExpenseListFilters extends Component {
               showClearDates={true}
               numberOfMonths={1}
               isOutsideRange={() => false}
-            />
+            /> */}
+            Date goes here
           </div>
         </div>
       </div>
