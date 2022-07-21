@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import axios from 'axios';
+
 import ExpenseListItem from "./ExpenseListItem";
 import selectExpenses from "../selectors/expenses";
+import { setExpenses } from "../actions/expenses";
 
-const ExpenseList = props => {
+const ExpenseList = () => {
+
+  const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://localhost:7013/api/expenserecords').then(response => setExpenses(response.data))
+  }, [])
+
   return (
     <div className="content-container">
       <div className="list-header">
@@ -13,12 +23,12 @@ const ExpenseList = props => {
       </div>
 
       <div className="list-body">
-        {props.expenses.length === 0 ? (
+        {expenses.length === 0 ? (
           <div className="list-item list-item--message">
             <span>No Expenses</span>
           </div>
         ) : (
-          props.expenses.map(expense => {
+          expenses.map(expense => {
             return <ExpenseListItem key={expense.id} {...expense} />;
           })
         )}

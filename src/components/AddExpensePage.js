@@ -10,10 +10,9 @@ class AddExpensePage extends Component {
   //const [expenses, setExpenses] = useState([]);
 
   onSubmit = (expense) => {
-    this.props.startAddExpense(expense);
+    this.props.addExpense(expense);
     //this.props.history.push('/');
-    axios.post('https://localhost:7013/api/expenserecords', {expense}).then(response => { 
-      console.log(response.data)})
+    axios.post('https://localhost:7013/api/expenserecords', expense)
   };
 
   render() {
@@ -31,9 +30,8 @@ class AddExpensePage extends Component {
     )
   }
 }
-
 const mapDispatchToProps = (dispatch) => ({
-  startAddExpense: (expense) => dispatch(addExpense(expense))
+  addExpense: (expense) => dispatch(addExpense(expense))
 })
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);

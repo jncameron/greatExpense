@@ -9,7 +9,7 @@ export default class ExpenseForm extends React.Component {
 
     this.state = {
       id: '6',
-      description: props.expense ? props.expense.description : "",
+      comment: props.expense ? props.expense.description : "",
       amount: props.expense ? (props.expense.amount / 100).toString() : "",
       // createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       expense: '2',
@@ -56,10 +56,11 @@ export default class ExpenseForm extends React.Component {
       this.props.onSubmit({
         id: this.state.id,
         comment: this.state.description,
-        amount: parseFloat(this.state.amount, 10) * 100,
+        expense: this.state.expense,
+        amount: parseFloat(this.state.amount, 10) * 100
         // createdAt: this.state.createdAt.valueOf(),
         // note: this.state.note,
-        expense: this.state.expense
+        
       });
     }
   };
